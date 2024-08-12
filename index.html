@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>clase diagnostico</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-top: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>calculadora de sueldo</h1>
+    <!-- dado el sueldo de un trabajador aplique un aumento del 15% si su sueldo es inferior a 1000 imprima el sueldo que percibira con el aumento, si su sueldo es mayor a 1000 imprima el sueldo sin aumento -->
+
+    <form action="index.html" method="post">
+      <label for="sueldo">Sueldo</label>
+      <input type="number" name="sueldo" id="sueldo" />
+      <button type="submit">Calcular</button>
+    <script>
+      const form = document.querySelector('form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const sueldo = document.querySelector('#sueldo').value;
+        if (sueldo < 1000) {
+          let newSueldo = sueldo * 15
+          newSueldo= newSueldo / 100
+          newSueldo = parseInt(newSueldo) + parseInt(sueldo)
+          alert(`El sueldo con aumento es: ${parseInt(newSueldo)}$`);
+        } else {
+          alert(`El sueldo sin aumento es: ${sueldo}$`);
+        }
+      });
+    </script>
+    <!-- <script type="module" src="script.js"></script> -->
+  </body>
+</html>
